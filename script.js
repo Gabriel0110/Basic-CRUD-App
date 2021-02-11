@@ -1,9 +1,9 @@
-var app = new function() {
+let app = new function() {
     this.el = document.getElementById('tasks');
     this.tasks = [];
 
     this.FetchAll = function() {
-        var data = '';
+        let data = '';
 
         if (this.tasks.length > 0) {
             for (i = 0; i < this.tasks.length; i++) {
@@ -20,7 +20,7 @@ var app = new function() {
 
     this.Add = function() {
         el = document.getElementById('add-todo');
-        var task = el.value;
+        let task = el.value;
         if (task) {
             this.tasks.push(task.trim());
             el.value = '';
@@ -35,7 +35,7 @@ var app = new function() {
         self = this;
 
         document.getElementById('save-edit').onsubmit = function() {
-            var task = el.value;
+            let task = el.value;
             if (task) {
                 self.tasks.splice(item, 1, task.trim());
                 self.FetchAll();
@@ -51,8 +51,8 @@ var app = new function() {
     };
 
     this.Count = function(data) {
-        var el = document.getElementById('counter');
-        var name = 'Tasks';
+        let el = document.getElementById('counter');
+        let name = 'Tasks';
         if (data) {
             if (data == 1) {
                 name = 'Task';
